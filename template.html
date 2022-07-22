@@ -1,0 +1,192 @@
+<html lang="en">
+<head>
+    <title>Puerto Rico Internet Exchange</title>
+    <link href="water.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --background: #ffffff;
+            --background-body: #ffffff;
+            --background-alt: #272727;
+            --selection: #acacac;
+            --text-main: #000000;
+            --text-bright: #000000;
+            --text-muted: #343434;
+            --links: #eb0f14;
+            --focus: rgba(230, 230, 230, 0.67);
+            --border: #acacac;
+            --code: #ffffff;
+            --animation-duration: 0.1s;
+            --button-base: #373737;
+            --button-hover: #121212;
+            --scrollbar-thumb: var(--button-hover);
+            --scrollbar-thumb-hover: #ffffff;
+            --form-placeholder: #a9a9a9;
+            --form-text: #fff;
+            --variable: #acacac;
+            --highlight: #ffffff;
+        }
+
+        a {
+            text-decoration: underline;
+        }
+
+        tr.border {
+            border-bottom: 1px solid #e1e1e1;
+        }
+    </style>
+</head>
+<body>
+
+<img alt="Puerto Rico Internet Exchange Logo" src="logo.png" width="500px">
+<p>
+    The Puerto Rico Internet Exchange (PR-IX) is an internet exchange in San Juan, PR.
+</p>
+
+<p>See our <a href="https://www.peeringdb.com/ix/2353">PeeringDB page</a> for more information.</p>
+
+<h2>Weekly Traffic</h2>
+<img src="https://puertoricoix.net/prix-aggregate-1w.png" alt="">
+
+<h2>Contact</h2>
+<p>
+    Send us an email at noc@puertoricoix.net or join our <a href="https://groups.google.com/a/puertoricoix.net/d/forum/discuss">Mailing List</a> and <a href="https://join.slack.com/t/puertoricoix/shared_invite/enQtODcyMTY4ODEzMTI0LTc0NzgzNjIwNjI4MDFkNzY5NzFkNGUyNGY3NDhjOTNkZWM1Mjc4NmEwMTg1NWRkODcyZTY3NmJmOTEwZTA4MTU">Slack</a>.
+</p>
+
+<h2>Pricing</h2>
+<p>We support connections over SMF with 1G-LX, 25G-LR, 10G-LR, or 100G-LR4 optics.</p>
+<ul>
+    <li>1G: $x</li>
+    <li>25G: $x</li>
+    <li>10G: $x</li>
+    <li>100G: $x</li>
+</ul>
+
+<h2>Policy</h2>
+<p>
+    If a member causes issues for the exchange or other members, the offending port may be brought down until the issue
+    is corrected.
+</p>
+<ul>
+    <li>Only announce IP space that you're authorized to announce.</li>
+    <li>Only 0x0800 (IPv4), 0x0806 (ARP), and 0x86dd (IPv6) ethertypes are permitted.</li>
+    <li>Only one MAC address per port without prior authorization.</li>
+</ul>
+
+<h2>Services</h2>
+
+<h3>Google Global Cache</h3>
+<p>
+    PR-IX has a Google Global Cache node to cache common Google content. It announces 23.171.112.32/27 and
+    2607:9280:1:e100::/64 to the route servers, originated by AS36040.
+</p>
+
+<h3>Notable DNS Servers</h3>
+<ul>
+    <li>D and E roots (hosted by PCH AS42)</li>
+    <li>Quad9 Recursive Resolver (hosted by PCH AS42)</li>
+    <li>AS112 Blackhole Server</li>
+</ul>
+
+<!--<h3>Remotely Triggered Blackhole (RTBH)</h3>-->
+<!--<p>-->
+<!--    PR-IX operates a blackhole server at 44.190.42.251 and 2602:801:30ff::251 with a static MAC of 66:66:de:ad:be:ef.-->
+<!--    Members may add the <a href="https://datatracker.ietf.org/doc/html/rfc7999">RFC7999</a> blackhole community-->
+<!--    (65535:666) to /32 IPv4 and /128 IPv6 routes to instruct the route servers to blackhole the route.-->
+<!--</p>-->
+
+<h3>Route Servers</h3>
+<p>The PR-IX route servers use AS18804 on the following addresses:</p>
+<ul>
+    <li>204.138.0.251</li>
+    <li>2620:102:b000::251</li>
+    <li>204.138.0.252</li>
+    <li>2620:102:b000::252</li>
+</ul>
+<p>The route servers run enforce prefix filters for each peer.</p>
+
+<!--<h4>BGP Communities</h4>-->
+<!--<p>-->
+<!--    The route servers pass along all communities to peers (NO_EXPORT for example). They also add information communities-->
+<!--    and accept action communities from peers:-->
+<!--</p>-->
+
+<!--<h4>Informational Communities</h4>-->
+<!--<table>-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--        <th>Community</th>-->
+<!--        <th>Large Community</th>-->
+<!--        <th>Description</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--    <tr>-->
+<!--        <td>18804:18804</td>-->
+<!--        <td>18804:1:18804</td>-->
+<!--        <td>Added to all routes</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td></td>-->
+<!--        <td>18804:2:x</td>-->
+<!--        <td>Learned from ASx</td>-->
+<!--    </tr>-->
+<!--    </tbody>-->
+<!--</table>-->
+
+<!--<h4>Action Communities</h4>-->
+<!--<table>-->
+<!--    <thead>-->
+<!--    <tr>-->
+<!--        <th>Community</th>-->
+<!--        <th>Large Community</th>-->
+<!--        <th>Description</th>-->
+<!--    </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--    <tr>-->
+<!--        <td>18804:0</td>-->
+<!--        <td>18804:0:0</td>-->
+<!--        <td>Don&#39;t announce to any peer</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td></td>-->
+<!--        <td>18804:0:x</td>-->
+<!--        <td>Don&#39;t announce to ASx</td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--        <td>65535:666</td>-->
+<!--        <td></td>-->
+<!--        <td>Blackhole (set nexthop to .251/::251)</td>-->
+<!--    </tr>-->
+<!--    </tbody>-->
+<!--</table>-->
+
+<h2>Members</h2>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>ASN</th>
+        <th>Port</th>
+        <th>IPs</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for peer in peers %}
+    <tr class="border">
+        <td><a href="{{ peer['website'] }}">{{ peer["name"] }}</a></td>
+        <td><a style="color: black" href="https://peeringdb.com/asn/{{ peer['asn'] }}">{{ peer["asn"] }}</a></td>
+        <td>{{ (peer["speed"]/1000)|round|int }}G</td>
+        <td>{{ peer["ipv4"] }}<br>{{ peer["ipv6"] }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<footer>
+    &copy; 2022 Puerto Rico Internet Exchange.
+</footer>
+
+</body>
+</html>
